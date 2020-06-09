@@ -1,0 +1,114 @@
+.container {    
+    display: flex; 
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.cartHeader {
+   text-align: center;
+   padding-bottom: 10px;
+   display: flex; 
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-wrap: wrap;
+}
+#myCart {
+    margin-left: 5vw;
+}
+.cartHeader h3{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #e65100;
+}
+.cartHeader img {
+    width: 3vw;
+}
+.cartHeader a {
+    text-decoration: none;
+    color: #ffa000;
+    font-size: smaller;
+}
+.cartBody {
+    border: lightgray 1px solid;
+    height: 80%;
+    overflow: auto;
+}
+.cartBody span{
+    color: #ffa000;
+}
+ul {
+    padding-left: 2vw;
+}
+li { 
+    display: flex; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+li img {
+    width: 5vw;
+}
+.cartFooter {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+.cartFooter p{
+    font-size: medium;
+    margin-top: 0;
+    padding-top: 7px;
+}
+.cartFooter a{
+    padding: 5px 15px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #ef6c00;
+    background-color: #ef6c00;
+    width: 40px;
+    display:inline-block;
+    text-align: center;
+}
+.panelB {
+    margin-left: 2vw;
+    height: 75vh;
+    padding-top: 2vw;
+}
+.panelC {
+    text-align: center;
+    height: 10%;
+    font-size: small;
+}
+.panelC a{
+    color: #e65100;
+}
+.panelD {
+    height: 90%;
+    background-color: white;
+    display: flex; 
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+p {
+    font-size: xx-small;
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="panelD"] {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    [class*="container"] {
+      justify-content: left;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }

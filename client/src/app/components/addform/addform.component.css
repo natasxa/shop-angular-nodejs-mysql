@@ -1,0 +1,28 @@
+.errors {
+  font-size: x-small;
+  color: #ef6c00;
+  padding-bottom: 1vh;
+}
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  color: white;
+  border: 2px solid #ef6c00;
+  background-color: #ef6c00;
+  text-decoration: none;  
+}  
+a:hover {
+  cursor: pointer;
+}
+p {
+  font-size: smaller;
+}
+.form-group {
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1vw;
+}

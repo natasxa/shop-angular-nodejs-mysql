@@ -1,0 +1,20 @@
+<div class="container">
+  <app-sidebar [openCart]="openCart" [cart_id]="cart_id"></app-sidebar> 
+  <div class="panelB">
+    <div class="panelC">
+      <a (click)="handleClick(1)">vacuum cleaners</a>
+      <span> | </span>
+      <a (click)="handleClick(2)">watches</a>
+      <span> | </span>
+      <a (click)="handleClick(3)">phones</a>
+      <span> | </span>
+      <a (click)="handleClick(4)">cameras</a>
+      <span> | </span>
+      <a (click)="handleClick(5)">smart devices</a>
+    </div>
+    <div class="panelD">
+      <app-card class="card" *ngFor="let i of localItems" [isEmpty]="isEmpty" [openCart]="openCart" [cart_id]="cart_id"
+        [item]="i"></app-card> 
+    </div>
+  </div>
+</div>

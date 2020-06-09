@@ -1,0 +1,41 @@
+<iframe name="fakePage" id="fakePage" style="display: none;"></iframe>
+<form #form target="fakePage" action="http://localhost:1000/fileupload/update" method="post" enctype="multipart/form-data"
+  [formGroup]="form_update">  
+  <div class="form-group">
+    <label>Product name: </label>
+    <input type="text" formControlName="name" placeholder="{{item.name}}">
+  </div>
+  <div class="form-group">
+    <label>Product ID: </label>
+    <input type="text" name="id" value="{{item.id}}" placeholder="{{item.id}}" readonly>
+  </div>
+  <div class="form-group">
+    <label>Product Price: </label>
+    <input type="text" formControlName="price" placeholder="{{item.price}}">
+  </div>
+  <div class="form-group">
+    <label>Picture: </label>
+    <input type="file" name="filetoupload" formControlName="picture" (change)="onFileSelected($event)"
+      style="display: none;" #fileInput>
+    <input type="text" (click)="fileInput.click()" (keydown.enter)="fileInput.click()"
+      [placeholder]="fileName? fileName : item.img_url">
+  </div>
+  <div class="form-group">
+    <label>Category: </label>
+    <input type="text" formControlName="category" placeholder="{{item.category_id}}">
+  </div>
+  <div class="errors" *ngIf="errors">
+    <div *ngIf="form_update.controls.price.errors?.pattern">price is number</div>
+    <div *ngIf="form_update.controls.category.errors?.pattern">category is number</div>
+    <div *ngIf="!isImage">upload png/jpg/jpeg file</div>
+    <div *ngIf="!isCategory">
+      choose existing category:<br>
+      1 - vacuum cleaners <br>
+      2 - watches <br>
+      3 - phones <br>
+      4 - cameras <br>
+      5 - smart devices
+    </div>
+  </div>
+  <div><a (click)="form.submit()" (click)="handleSave()">Save</a></div>
+</form>

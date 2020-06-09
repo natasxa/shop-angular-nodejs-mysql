@@ -1,0 +1,47 @@
+.container {    
+  display: flex; 
+  float: left;
+  width: 100%;  
+  margin-top: 10px;
+}
+.panelB {
+  margin-left: 2vw;
+  height: 75vh;
+  padding-top: 2vw;
+}
+.panelC {
+  text-align: center;
+  height: 10%;
+  font-size: small;
+}
+.panelC a{
+  color: #e65100;
+}
+.panelD {
+  height: 90%;
+  background-color: white;
+  display: flex; 
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+p {
+  font-size: xx-small;
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  [class*="panelD"] {
+    justify-content: center;
+    align-items: center;
+  }
+
+  [class*="container"] {
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

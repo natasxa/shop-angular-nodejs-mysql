@@ -1,0 +1,114 @@
+.my_cart, .order {
+    background-color: wheat;
+    width: 40vw;
+    min-width: 180px;
+    height: 75vh;
+    min-height: 200px;
+    padding: 20px;
+    margin-left: 5px;
+    margin-right: 5px;   
+    margin-bottom: 10px; 
+}
+a{
+    padding: 5px 15px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #ef6c00;
+    background-color: #ef6c00;
+    width: 100px;
+    display:inline-block;
+    text-align: center;
+}
+a:hover {
+    cursor: pointer;
+}
+.cartHeader {
+    height: 10%;
+}
+.cartBody {
+    height: 70%;
+    overflow: auto;
+}
+.footer {
+    height: 10%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+form {    
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.form-group {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2vw;
+}
+.my_cart .cartHeader {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.comment {
+    border-bottom: 1px solid #ef6c00;
+    margin-bottom: 2vw;
+}
+.comment p {
+    margin-bottom: 0px;
+}
+.form-group p {
+    font-size: x-small;
+}
+.my_cart .cartBody {
+    border: lightgray 1px solid;
+    overflow: auto;
+    background-color: white;
+    padding-top: 14px;
+}
+.my_cart .cartBody p {
+    font-size: xx-small;
+}
+ul {
+    padding-left: 2vw;
+}
+li { 
+    display: flex; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+li img {
+    width: 5vw;
+}
+input {
+    outline: none;
+}
+.order .footer a{
+    margin-left: 60%;
+}
+.errors {
+    font-size: x-small;
+    color: #ef6c00;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="my_cart"] {
+      height: 100%;
+    }
+    [class*="order"] {
+        height: 100%;
+      }
+  }

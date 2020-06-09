@@ -1,0 +1,40 @@
+<iframe name="fakePage" id="fakePage" style="display: none;"></iframe>
+<form #form target="fakePage" action="http://localhost:1000/fileupload/" method="post" enctype="multipart/form-data"
+    [formGroup]="form_create">    
+    <div class="form-group">
+        <label>* Product name: </label>
+        <input type="text" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label><span>* </span>Product Price: </label>
+        <input type="text" formControlName="price">
+    </div>  
+    <div class="form-group">
+        <label><span>* </span>Picture: </label>
+        <input type="file" name="filetoupload" formControlName="picture" (change)="onFileSelected($event)"
+            style="display: none;" #fileInput>
+        <input type="text" (click)="fileInput.click()" (keydown.enter)="fileInput.click()" placeholder="{{fileName}}">
+    </div>
+    <div class="form-group">
+        <label><span>* </span>Category: </label>
+        <input type="text" formControlName="category">
+    </div>
+    <div class="errors" *ngIf="errors">
+        <div *ngIf="form_create.controls.name.errors?.required">name is required</div>
+        <div *ngIf="form_create.controls.price.errors?.required">price is required</div>
+        <div *ngIf="form_create.controls.price.errors?.pattern">price is number</div>
+        <div *ngIf="form_create.controls.picture.errors?.required">picture is required</div>
+        <div *ngIf="form_create.controls.category.errors?.required">category is required</div>
+        <div *ngIf="form_create.controls.category.errors?.pattern">category is number</div>
+        <div *ngIf="!isImage">upload png/jpg/jpeg file</div>
+        <div *ngIf="!isCategory">
+            choose existing category:<br>
+            1 - vacuum cleaners <br>
+            2 - watches <br>
+            3 - phones <br>
+            4 - cameras <br>
+            5 - smart devices
+        </div>
+    </div>
+    <div><a (click)="form.submit()" (click)="handleSave($event)">Save</a></div>
+</form>

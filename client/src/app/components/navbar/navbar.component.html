@@ -1,0 +1,36 @@
+<header class="container">
+  <!--  <table>
+    <tr>
+      <td id="td1">
+        <h1 class="brand" routerLink="/">mimimiShop</h1>
+      </td>
+      <td id="td2">
+       </td>
+      <td id="td3">
+        <app-search *ngIf="router.url === '/shop' || router.url === '/admin'"></app-search>
+        <p id="hello">Hello, {{name}}!</p>
+        <mat-icon title='logout' aria-hidden="false" (click)="logout()" aria-label="icon">exit_to_app
+        </mat-icon>
+      </td>
+       <td id="td4">
+        
+      </td>
+    </tr>
+  </table> -->
+  <!-- <div class="container"> -->
+  <div>
+    <h1 class="brand" routerLink="/">mimimiShop</h1>
+  </div>
+  <div class="details">
+    <div>
+      <app-search *ngIf="router.url === '/shop' || router.url === '/admin'"></app-search>
+    </div>
+    <div>
+      <p>Hello, {{name}}!</p>
+    </div>
+    <div>
+      <mat-icon title='logout' aria-hidden="false" (click)="logout()" aria-label="icon">exit_to_app</mat-icon>
+    </div>
+  </div>
+  <!--  </div> -->
+</header>

@@ -1,0 +1,15 @@
+.card {
+    width: 10vw;
+    min-width: 80px;
+    height: 15vw;
+    min-height: 120px;
+    font-size: xx-small;
+    margin: 3px;
+    text-align: center; /* to center image on cart */
+}
+img {
+    width: 10vw;
+}
+.itemPrice, .itemName {
+    text-align: center;
+}

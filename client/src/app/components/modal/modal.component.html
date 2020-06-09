@@ -1,0 +1,21 @@
+<div *ngIf="router.url === '/shop'">
+  <h1 mat-dialog-title>Enter quantity: </h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.quantity" autocomplete="off">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.quantity" cdkFocusInitial>Add</button>
+  </div>
+</div>
+<div *ngIf="router.url === '/order'">
+  <h1 mat-dialog-title>Success!</h1>
+  <div mat-dialog-content>
+    <app-download></app-download>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button routerLink="/shop">OK</button>
+  </div>
+</div>

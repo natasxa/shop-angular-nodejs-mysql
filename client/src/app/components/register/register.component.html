@@ -1,0 +1,77 @@
+<div class="container">
+    <form [formGroup]="form">
+        <div class="step1" *ngIf="step1">
+            <h3>Step 1 ------------------------></h3>
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" formControlName="user_id">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="password_confirm">
+            </div>
+            <div>
+                <a (click)="handleContinue()">Continue</a>
+            </div>
+            <div class="errors1" *ngIf="errors1">
+                <div *ngIf="form.controls.user_id.errors?.required">id is required</div>
+                <div *ngIf="isRegistred">id already registred</div>
+                <div *ngIf="form.controls.email.errors?.required">email is required</div>
+                <div *ngIf="form.controls.email.errors?.pattern">email is not valid</div>
+                <div *ngIf="form.controls.password.errors?.required">password is required</div>
+                <div *ngIf="form.controls.password_confirm.errors?.required">password confirmation is required</div>
+                <div *ngIf="!form.controls.password.errors?.required&&!isMatch">passwords don't match</div>
+                <div *ngIf="isRegisteredID">ID is already registred</div>
+                <div *ngIf="isRegisteredEmail">Email is already registred</div>
+            </div>           
+        </div>
+        <div class="step2" *ngIf="step2">
+            <h3>Step 2 ------------------------></h3>
+            <div class="form-group">
+                <label>City</label>
+                <input list="cities" formControlName="city">
+                <datalist id="cities">
+                    <option value="Tel Aviv - Jaffo">
+                    <option value="Ramat Gan">
+                    <option value="Haifa">
+                    <option value="Ashdod">
+                    <option value="Eilat">
+                    <option value="Jerusalem">
+                    <option value="Petah Tikva">
+                    <option value="Kfar Saba">
+                    <option value="Hadera">
+                    <option value="Herzliya">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label>Street</label>
+                <input type="text" formControlName="street">
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="f_name">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" formControlName="l_name">
+            </div>
+            <div>
+                <a (click)="handleSubmit()">Submit</a>
+            </div>
+            <div class="errors2" *ngIf="errors2">
+                <div *ngIf="form.controls.city.errors?.required">city is required</div>
+                <div *ngIf="form.controls.street.errors?.required">street is required</div>
+                <div *ngIf="form.controls.f_name.errors?.required">name is required</div>
+                <div *ngIf="form.controls.l_name.errors?.required">last name is required</div>
+            </div>
+        </div>
+    </form>
+</div>

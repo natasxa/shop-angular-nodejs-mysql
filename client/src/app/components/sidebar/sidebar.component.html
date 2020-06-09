@@ -1,0 +1,37 @@
+<div class="sidebar">
+  <div class="form" *ngIf="router.url === '/admin'">
+    <div class="comment">
+      <a id="change" [class]="change" (click)="isCreating = false" (click)="changeColor()">Change</a>
+      <a id="add" [class]="add" (click)="isCreating = true" (click)="changeColor()">Add</a>
+    </div>
+    <app-updateform *ngIf="!isCreating" [localChoise]="localChoise"></app-updateform>
+    <app-addform *ngIf="isCreating" [localChoise]="localChoise"></app-addform>
+  </div>
+
+  <div class="shop" *ngIf="router.url === '/shop'">
+    <div class="active">
+      <a style="cursor: default;"> My cart</a>
+    </div>
+    <div class="cart">
+      <div class="cartBody">
+        <div class="emptyCart" *ngIf="!total">
+          <p >Your cart is empty!</p>
+        </div>        
+        <ul>
+          <li *ngFor="let o of openCart">
+            <span id={{o.item_id}} (click)="handleDelete($event)" title="remove">x</span>
+            <img src={{o.img_url}} />
+            <div>
+              <p>{{o.name}}</p>
+              <p>{{o.quantity}} for {{o.price_all}} ₪ </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="total" style="border: 1px solid #ef6c00; display: flex;">
+        <a class="active" href="/order">Order</a>
+        <a class="total" style="cursor: default;">Total: {{total}} ₪</a>
+      </div>
+    </div>
+  </div>
+</div>
